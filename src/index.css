@@ -1,13 +1,330 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  font-size: 62.5%;
+}
+:root{
+  --Marineblue: hsl(213, 96%, 18%);
+  --Purplishblue: hsl(243, 100%, 62%);
+  --Pastelblue: hsl(228, 100%, 84%);
+  --Lightblue: hsl(206, 94%, 87%);
+  --Strawberryred: hsl(354, 84%, 57%);
+  --Coolgray: hsl(231, 11%, 63%);
+  --Lightgray: hsl(229, 24%, 87%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Alabaster: hsl(231, 100%, 99%);
+  --White: hsl(0, 0%, 100%);
+}
+.bck-color{
+  background-color: var(--Magnolia);
+}
+.white{
+  background-color: white;
+}
+.form{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  font-family: 'ubutun', sans-serif;
+}
+.side-nav{
+  width: 20%;
+  height: 95%;
+  background-image: url(./images/bg-sidebar-desktop.svg);
+  background-position: center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  margin: auto 0 auto 1rem;
+  
+}
+.info-side{
+  width: 50%;
+  height: 95%;
+  margin: auto 20% auto 0;
+  position: relative;
+}
+.nav-item{
+  display: flex;
+  gap: 1rem;
+}
+.num{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  color: var(--White);
+  padding-top:2.5%;
+  /* padding-bottom: auto; */
+  text-align: center;
+  border: 0.1rem solid var(--White)
+}
+.info{
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: var(--White);
+}
+.nav-name{
+  text-transform: uppercase;
+  color: var(--Coolgray);
+  font-size: 1.2rem;
+}
+h1{
+  margin-top: 2rem;
+  color: var(--Marineblue);
+}
+p{
+  font-size: 1.6rem;
+  color: var(--Coolgray);
+  margin-top: 1rem;
+}
+form{
+  width: 80%;
+  margin-top: 3rem;
+}
+.input-wrapper{
+  margin-bottom: 2rem;
+}
+.input-wrapper label{
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--Marineblue);
+  display: block;
+  margin-bottom: .5rem;
+}
+.input-wrapper input{
+  display: block;
+  width: 100%;
+  height: 3.5rem;
+  padding: 1rem;
+  outline: none;
+  border-radius: .5rem;
+}
+.switch-btn{
+  width: 15%;
+  height: 3rem;
+  position: absolute;
+  border-radius: .5rem;
+  border: none;
+  cursor: pointer;
+}
+.back{
+  left: 0;
+  bottom: 5%;
+  color: var(--Coolgray);
+}
+.next{
+  right: 20%;
+  bottom: 5%;
+  color: var(--White);
+  background-color: var(--Marineblue);
+}
+.form-radio{
+  display: flex;
+  justify-content: space-between;
+  
+}
+.div-radio{
+  width: 30%;
+  border: .2rem solid var(--Coolgray);
+  border-radius: .5rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.div-radio input{
+  display: none;
 }
+.div-radio label{
+  width: 100%;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  cursor: pointer;
+}
+.div-radio label p{
+  color: var(--Marineblue);
+  font-weight: 600;
+}
+.div-radio label p span{
+  display: block;
+  font-size: 1.2rem;
+  color: var(--Coolgray);
+  margin-top: .5rem;
+}
+.div-radio label p .promo{
+  color: var(--Marineblue);
+  font-size: 1.2rem;
+}
+.icon-wrapper{
+  width: 3rem;
+  height: 3rem;
+}
+.div-radio:hover{
+  border: .2rem solid var(--Marineblue);
+}
+/* .cursor{
+  cursor: pointer;
+} */
+.icon-wrapper .icon{
+  width: 100%;
+  height: 100%;
+}
+.duration-switch-container{
+  width: 80%;
+  height: 3.5rem;
+  margin-top: 3rem;
+  background-color: var(--Magnolia);
+  border-radius: .5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.plan-duration{
+  width: fit-content;
+  margin: auto 0;
+  color: var(--Coolgray);
+  font-weight: 600;
+}
+.monthly-plan{
+  color: var(--Marineblue);
+}
+.duration-btn-wrapper{
+  position: relative;
+  width: 5rem;
+  height: 2rem;
+  background-color: var(--Marineblue);
+  margin: auto 0;
+  border-radius: 99rem;
+}
+.duration-btn{
+  position: absolute;
+  top: 15%;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.left{
+  left: 5%;
+}
+.right{
+  right: 5%;
+}
+.hidden{
+  display: none;
+}
+.form-addons{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+.add-ons{
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  border: .1rem solid var(--Coolgray);
+  padding-left: 2rem;
+  border-radius: .5rem;
+  cursor: pointer;
+}
+.add-ons input{
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  margin: auto;
+  cursor: pointer;
+}
+.add-ons label{
+  width: 65%;
+  margin: auto;
+  cursor: pointer;
+}
+.add-ons .price{
+  width: 10%;
+  font-size: 1.4rem;
+  margin: auto;
+  color: var(--Marineblue);
+}
+.change-bck{
+  background-color: var(--Magnolia);
+  border: .2rem solid var(--Marineblue);
+}
+.finish-wrapper{
+  width: 80%;
+  background-color: var(--Lightgray);
+  border-radius: .5rem;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+.finish-plan-wrapper{
+  width: 100%;
+  border-bottom: .1rem solid var(--Coolgray);
+  height: 6rem;
+  /* background-color: red; */
+}
+.finish-addons-wrapper{
+  width: 100%;
+}
+.finish-plan, .finish-addons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.plann p{
+  color: var(--Marineblue);
+  text-transform: capitalize;
+  font-weight: 700;
+}
+.plann div{
+  text-decoration: underline;
+  color: var(--Coolgray);
+  cursor: pointer;
+}
+.finish-plan p{
+  color: var(--Marineblue);
+  font-weight: 700;
+}
+.prices{
+  color: var(--Marineblue);
+}
+.total-price{
+  display:flex;
+  width: 80%;
+  margin: 2rem 0 0 0;
+  justify-content: space-between;
+  padding: 0 3rem 0 3rem;
+}
+.prize{
+  color: var(--Purplishblue);
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+.thank-you-wrapper{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.thank-you-wrapper p{
+  text-align: center;
+}
+
+
