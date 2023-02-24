@@ -61,7 +61,7 @@ const FinishingUp = ({prevStep, nextStep, userInfo, takeToPlans}) => {
                     {plan ==='arcade' &&<div className="finish-plan">
                         <div className="plann">
                             <p>{plan} {!yearlyPlan ?<span>(Monthly)</span>:<span>(Yearly)</span>}</p>
-                            <div onClick={()=>takeToPlans()}>change</div>
+                            <div onClick={()=>takeToPlans(2)}>change</div>
                         </div>
                         {!yearlyPlan &&<p>{`$${arcadeprice}/mo`}</p>}
                         {yearlyPlan &&<p>{`$${arcadeprice* 10}/yr`}</p>}
@@ -70,7 +70,7 @@ const FinishingUp = ({prevStep, nextStep, userInfo, takeToPlans}) => {
                     {plan ==='advanced' &&<div className="finish-plan">
                         <div className="plann">
                             <p>{plan} {!yearlyPlan ?<span>(Monthly)</span>:<span>(Yearly)</span>}</p>
-                            <div onClick={()=>takeToPlans()}>change</div>
+                            <div onClick={()=>takeToPlans(2)}>change</div>
                         </div>
                         {!yearlyPlan &&<p>{`$${advancedprice}/mo`}</p>}
                         {yearlyPlan &&<p>{`$${advancedprice* 10}/yr`}</p>}
@@ -79,7 +79,7 @@ const FinishingUp = ({prevStep, nextStep, userInfo, takeToPlans}) => {
                     {plan ==='pro' &&<div className="finish-plan">
                         <div className="plann">
                             <p>{plan} {!yearlyPlan ?<span>(Monthly)</span>:<span>(Yearly)</span>}</p>
-                            <div onClick={()=>takeToPlans()}>change</div>
+                            <div onClick={()=>takeToPlans(2)}>change</div>
                         </div>
                         
                         {!yearlyPlan &&<p>{`$${proprice}/mo`}</p>}

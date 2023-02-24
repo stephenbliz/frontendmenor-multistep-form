@@ -17,8 +17,13 @@ const SideNav = ({step}) => {
             <div className="side-nav">
                 {navInfos.map((navInfo) => (
                     <div className="nav-item" key={navInfo.id}>
-                        { step === navInfo.id ?<div className="num" style={bckColor}>{navInfo.num}</div>
-                        :<div className="num">{navInfo.num}</div>}
+                        { step === navInfo.id ? <div className="num-wrapper">
+                        <div className="num" style={bckColor}>{navInfo.num}</div>
+                        
+                        </div>:<div className="num-wrapper">
+                            <div className="num">{navInfo.num}</div>
+                            </div> }
+                        
                         <div className="nav-info">
                             <div className="nav-name">{navInfo.name}</div>
                             <div className="info">{navInfo.info}</div>

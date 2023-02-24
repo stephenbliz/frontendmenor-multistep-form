@@ -10,6 +10,27 @@ import ThankYou from "./component/ThankYou";
 
 const App = () => {
 
+  const pattern = {
+    name: /^[a-zA-Z]+(\s[a-zA-Z]+)*$/,
+    phone: /^\+[\d]{11,14}$/,
+    email: /^([a-z\d_]+)@([a-z]+)\.([a-z]{2,5})(\.[a-z]{2,5})?$/
+  }
+
+  const [isvalid, setIsvalid] = useState(true);
+
+  const invalid = ()=>{
+    setIsvalid(!isvalid);
+  }
+
+  const validation = (regex, field) =>{
+    if(regex.test(field.value)){
+      field.className = 'valid'
+    }else{
+      field.className = 'invalid'
+    }
+  }
+  
+ 
   const [userInfo, setUserInfo] = useState({
     name:'',
     email:'',
@@ -32,8 +53,8 @@ const App = () => {
   const prevStep = () => {
     setStep(step - 1);
   };
-  const takeToPlans = ()=>{
-    setStep(2);
+  const takeToPlans = (nums)=>{
+    setStep(nums);
   }
 
   const nextStep = () => {
@@ -45,6 +66,9 @@ const App = () => {
       case 1:
         return(<PersonalInfo
           userInfo={userInfo}
+          pattern={pattern}
+          takeToPlans={takeToPlans}
+          validation={validation}
           setUserInfo={setUserInfo}
           step={step}
           prevStep={prevStep}
